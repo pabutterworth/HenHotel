@@ -8,6 +8,7 @@ DEBUG = 0
 def push(push_text):
     conn = httplib.HTTPSConnection("api.pushover.net:443")
     if DEBUG != 1:
+        print("Sending Pushover Notification :"+message)
         conn.request("POST", "/1/messages.json",
           urllib.urlencode({
             "token": "APP_TOKEN",
@@ -16,6 +17,8 @@ def push(push_text):
             "message": ctime() + " " + push_text,
           }), { "Content-type": "application/x-www-form-urlencoded" })
         conn.getresponse()
+    else
+        print("DEBUG: Pushover - "+message
     return #end of function push
 
 push ("Testing")
