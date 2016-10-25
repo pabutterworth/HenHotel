@@ -18,7 +18,7 @@ def push(push_text):
           }), { "Content-type": "application/x-www-form-urlencoded" })
         conn.getresponse()
     else:
-        print("DEBUG: Pushover - "+ message)
+        print("DEBUG: Pushover - "+ push_text)
     return
     #end of function push
 
