@@ -19,6 +19,6 @@ def push(push_text):
         conn.getresponse()
     else:
         print("DEBUG: Pushover - "+message
-    return #end of function push
+    #end of function push
 
 push ("Testing")
