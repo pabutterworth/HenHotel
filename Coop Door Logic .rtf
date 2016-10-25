@@ -1,0 +1,160 @@
+{\rtf1\ansi\deff0 {\fonttbl
+{\f0\froman Times New Roman;}
+{\f1\fswiss Arial;}
+{\f2\fmodern Courier New;}
+}
+{\stylesheet
+{\s0 \qj\sa180\f0\fs24 Normal;}
+{\s1 \f1\fs32\ql\sb240\sa180\b Header 1;}
+{\s2 \f1\fs28\ql\sb240\sa180\i\b Header 2;}
+{\s3 \f1\fs28\ql\sb240\sa180\b Header 3;}
+{\s4 \f1\fs24\ql\sb240\sa180\i\b Header 4;}
+{\s5 \f1\fs24\ql\sb240\sa180\b Header 5;}
+{\s6 \f1\fs22\ql\sb240\sa180\b Header 6;}
+{\s7 \qj\sa180\f0\fs24\li720\ri720 Quotation;}
+{\s7 \qj\sa180\f0\fs24\li360\ri360 Note;}
+}
+\margt1150\margb1150\margl1150\margr1150
+{\pard \s0 \qj\sa180\f0\fs24 {\b Coop Door Logic}
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 time functions are time of day in 24 hr clock
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 set rtc(from nntp) {\b once a day, maybe by a cron job}?
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 or get on board etc, {\b probably better for power management}
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 get sunriseandsunset()
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 doorstatus = {\b unknown} closed, open, timesup, manualoverride
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 opentime = 30
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 close time = 30
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 main()
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 \{
+\par}
+
+{\pard \s7 \qj\sa180\f2\fs20\li360\ri360 if (closeswitch = true) and (openswitch = true)\
+\{\
+    sendmessage(\uc0\u8220 Error, both microswitches registering\uc0\u8221 )\
+    abort()\
+\}\
+if closeswitch = true\
+    doorstatus = closed\
+if openswitch = true\
+    doorstatus = open\
+
+\par}
+
+
+{\pard \s0 \qj\sa180\f0\fs24 {\i Is this logic correct below}?
+\par}
+
+{\pard \s7 \qj\sa180\f2\fs20\li360\ri360 do\
+\{\
+    timenow = *currenttime*\
+    if (timenow >= sunrise) and (doorstatus = closed)\
+    \{\
+        doorstatus = opendoor()\
+    \}\
+    if (timenow >= sunset) and (doorstatus = open)\
+    \{\
+        doorstatus = closedoor()\
+        get sunriseandsunset() **to update system once daily**\
+    \}\
+    sleep 5 mins\
+\}while door status != timesup\
+
+\par}
+
+
+{\pard \s0 \qj\sa180\f0\fs24 \}
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 Opendoor()
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 \{
+\par}
+
+{\pard \s7 \qj\sa180\f2\fs20\li360\ri360 doorstatus = false\
+\
+starttime = *currenttime*\
+startmotor(open)\
+do\
+\{\
+    if openswitch = true\
+    \{\
+        doorstatus = closed\
+        sendmessage(\uc0\u8220 All good, door opened at *currenttime*\uc0\u8221 )\
+    \}\
+    if (starttime+opentime) > *currenttime*\
+    \{\
+        doorstatus = timesup\
+        sendmessage(\uc0\u8220 Check door, timer expired during open at *currenttime*\uc0\u8221 )\
+    \}\
+    if manualswitch = close\
+    \{\
+        doorstatus = manualoverride\
+    \}\
+    sleep 100ms\
+\}\
+while doorstatus = false\
+stopmotor()\
+return doorstatus\
+
+\par}
+
+
+{\pard \s0 \qj\sa180\f0\fs24 \}
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 closedoor()
+\par}
+
+{\pard \s0 \qj\sa180\f0\fs24 \{
+\par}
+
+{\pard \s7 \qj\sa180\f2\fs20\li360\ri360 doorstatus = false\
+\
+starttime = *currenttime*\
+startmotor(close)\
+do\
+\{\
+    if closeswitch = true\
+    \{\
+        door status = closed\
+        sendmessage(\uc0\u8220 All good, door closed at *currenttime*\uc0\u8221 )\
+    \}\
+    if (starttime+closetime) > *currenttime*\
+    \{\
+        doorstatus = timesup\
+        sendmessage(\uc0\u8220 Check door, timer expired during close at *currenttime*\uc0\u8221 )\
+    \}\
+    if manualswitch = open\
+    \{\
+        doorstatus = manualoverride\
+    \}\
+    sleep 100ms\
+\}\
+while doorstatus = false\
+stopmotor()\
+return doorstatus\
+
+\par}
+
+
+{\pard \s0 \qj\sa180\f0\fs24 \}
+\par}
+}
