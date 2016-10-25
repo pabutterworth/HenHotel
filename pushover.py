@@ -3,7 +3,7 @@ from time import ctime
 APP_TOKEN = "ahtdgjqm8w9xxv1v4bzsuwap5c6o7o"
 USER_KEY = "uZ8cbsrmeoMiMJEU6MzHTVKNwrPUr2"
 
-DEBUG = 1
+DEBUG = 0
 
 def push(push_text):
     conn = httplib.HTTPSConnection("api.pushover.net:443")
