@@ -17,3 +17,5 @@ def push(push_text):
           }), { "Content-type": "application/x-www-form-urlencoded" })
         conn.getresponse()
     return #end of function push
+
+push ("Testing")
