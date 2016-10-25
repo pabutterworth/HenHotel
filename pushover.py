@@ -7,7 +7,7 @@ DEBUG = 1
 
 def push(push_text):
     conn = httplib.HTTPSConnection("api.pushover.net:443")
-    if !DEBUG
+    if DEBUG _= 1:
         conn.request("POST", "/1/messages.json",
           urllib.urlencode({
             "token": "APP_TOKEN",
