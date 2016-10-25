@@ -1,4 +1,4 @@
-import http.client, urllib
+import httplib, urllib
 from time import ctime
 APP_TOKEN = "ahtdgjqm8w9xxv1v4bzsuwap5c6o7o"
 USER_KEY = "uZ8cbsrmeoMiMJEU6MzHTVKNwrPUr2"
