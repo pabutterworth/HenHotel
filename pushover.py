@@ -16,4 +16,5 @@ def push(push_text):
             "message": ctime() + " " + push_text,
           }), { "Content-type": "application/x-www-form-urlencoded" })
     conn.getresponse()
+    print push_text
     return  # End of function push
