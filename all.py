@@ -79,7 +79,7 @@ def pushover(push_text):
 
 def timer():
    now = time.localtime(time.time())
-   print now
+   print "Time = "+now
    return now[5]
 
 def motor(direction):
