@@ -275,7 +275,7 @@ sun = Sun()
 
 print sun.getSunriseTime(coords)
 # Sunrise time UTC (decimal, 24 hour format)
-push ("hi")
+
 print sun.getSunriseTime( coords )['hr'] 
 print sun.getSunriseTime( coords )['min']
 
