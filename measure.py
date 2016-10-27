@@ -5,7 +5,7 @@ import time
 TRIG = 23 
 ECHO = 24
 
-def howfar()
+def howfar():
   GPIO.setmode(GPIO.BOARD)
   GPIO.setup(TRIG,GPIO.OUT)
   GPIO.setup(ECHO,GPIO.IN)
