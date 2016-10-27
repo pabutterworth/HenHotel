@@ -17,7 +17,7 @@ STOPMOTOR = 3
 
 MAX_TIME = 30
 CLOSE_TIME = 10 #time to take to close
-OPEN_TIME = 50  
+OPEN_TIME = 10 #time to open  
 
 OPEN_DISTANCE = 70
 CLOSED_DISTANCE = 20
@@ -79,6 +79,7 @@ def pushover(push_text):
 
 def timer():
    now = time.localtime(time.time())
+   print now
    return now[5]
 
 def motor(direction):
@@ -109,12 +110,12 @@ def closeDoor():
   
     status = WORKING
     finishtime = timer()+CLOSE_TIME
+    print "Finishtime = "+finishtime
 
     motor(REVERSE) #start the motor closing
 
     while status == WORKING:
         if timer() >= finishtime: #timer expired
-	    print timer() + finishtime
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
             pushover("Time Out - Check Ramp")
