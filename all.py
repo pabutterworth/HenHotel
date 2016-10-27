@@ -30,11 +30,11 @@ APP_TOKEN = "ap1zxxfpdcnbkkfk5fk9daoob78hpb"
 USER_ID = "uZ8cbsrmeoMiMJEU6MzHTVKNwrPUr2"
 
 #GPIO PINS
-
 GPIO_MOTOR_FORWARD = 13
 GPIO_MOTOR_REVERSE = 15
 GPIO_TRIG = 23 #Distance sensor
 GPIO_ECHO = 24 #Distance sensor
+GPIO_UP_SWITCH = 29
 
 def debugprint(message):
     if (debugmode == True):
@@ -105,7 +105,12 @@ def motor(direction):
 	return #enf of function mortor
 
 def manualswitch():
-    return 0
+    result = 0
+    GPIO.setup(GPIO_UP_SWITCH,GPIO.IN)
+    if GPIO.input(GPIO_UP_SWITCH)==1:
+	print("Switch in Up position")
+	result = 1
+    return result
 
 def closeDoor():
   
