@@ -116,5 +116,6 @@ def closeDoor():
     motor(STOPMOTOR)
     return(status)
 
-    closeDoor()
+print("Starting")
+closeDoor()
 
