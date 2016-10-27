@@ -155,6 +155,7 @@ print("Starting")
 GPIO.setmode(GPIO.BOARD)
 print "close door"
 closeDoor()
+sleep(3)
 print "open door"
 openDoor()
 print("Finishing")
