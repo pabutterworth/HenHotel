@@ -25,7 +25,7 @@ GPIO_MOTOR_REVERSE = 15
 GPIO_TRIG = 23 #Distance sensor
 GPIO_ECHO = 24 #Distance sensor
 
-debugprint(message):
+def debugprint(message):
 	if debugmode == True
 		print message
 	return
