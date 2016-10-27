@@ -6,7 +6,7 @@ TRIG = 23
 ECHO = 24
 
 def howfar():
-  GPIO.setmode(GPIO.BOARD)
+  #GPIO.setmode(GPIO.BOARD)
   GPIO.setup(TRIG,GPIO.OUT)
   GPIO.setup(ECHO,GPIO.IN)
 
@@ -32,7 +32,7 @@ def howfar():
 
   print "Distance:",distance,"cm"
 
-  GPIO.cleanup()
+  #GPIO.cleanup()
   return distance
   #end of function howfar
   
