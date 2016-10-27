@@ -102,7 +102,7 @@ def closeDoor():
     distanceabort = 3
 
     status = working
-    finishtime = timer()+CLOSED_TIME
+    finishtime = timer()+CLOSE_TIME
 
     motor(REVERSE) #start the motor closing
 
