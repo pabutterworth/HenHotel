@@ -129,7 +129,7 @@ def closeDoor():
     motor(STOPMOTOR)
     return(status)
 
-def closeDoor():
+def openDoor():
     status = WORKING
     finishtime = timer() + OPEN_TIME
     print finishtime
