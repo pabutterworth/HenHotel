@@ -268,24 +268,40 @@ def openDoor():
     motor(STOPMOTOR)
     return(status)
 
+#The Main App starts here
 
 print("Starting")
 
-sun = Sun()
+if (howfar() == CLOSED_DISTANCE)
+    if (opendoor() == SUCCESS) #Get into a know state at startup.
+        door_status = open
+    else:
+	pushover("Check the system, opendoor failed on startup")
+	GPIO.cleanup()
+	raise SystemExit
 
-print sun.getSunriseTime(coords)
-# Sunrise time UTC (decimal, 24 hour format)
+	
+quit = False
+while (quit == False)
 
-print sun.getSunriseTime( coords )['hr'] 
-print sun.getSunriseTime( coords )['min']
+    sun = Sun()
+    timenow = time()
 
-print sun.getSunsetTime( coords )['hr'] 
-print sun.getSunsetTime( coords )['min']
-GPIO.setmode(GPIO.BOARD)
-print "close door"
-closeDoor()
-sleep(3)
-print "open door"
-openDoor()
-print("Finishing")
+    if (timenow > sun.getSunriseTime(coords))
+
+    print sun.getSunriseTime(coords)
+    # Sunrise time UTC (decimal, 24 hour format)
+
+    print sun.getSunriseTime( coords )['hr'] 
+    print sun.getSunriseTime( coords )['min']
+    print sun.getSunsetTime( coords )['hr']
+    print sun.getSunsetTime( coords )['min']
+	
+	GPIO.setmode(GPIO.BOARD)
+	print "close door"
+	closeDoor()
+	sleep(3)
+	print "open door"
+	openDoor()
+	print("Finishing")
 
