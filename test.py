@@ -2,6 +2,7 @@
 from sun import Sun
 from pushover import push
 from time import sleep
+from measure import howfar
 
 import RPi.GPIO as GPIO
 from time import sleep
@@ -53,6 +54,8 @@ print sun.getSunsetTime( coords )['min']
 GPIO.setmode(GPIO.BOARD)
 PIR_PIN = 26
 GPIO.setup(PIR_PIN, GPIO.IN)
+
+print howfar()
 
 try:
     print ("testing c to exit")
