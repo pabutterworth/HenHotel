@@ -66,6 +66,7 @@ try:
         if GPIO.input(PIR_PIN):
             debug("motion")
             reverse(1)
+            sleep (0.5)
             forward(1)
         sleep(1)
 except KeyboardInterrupt:
