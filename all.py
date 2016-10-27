@@ -89,7 +89,7 @@ def motor(direction):
 		debugprint ("Invalid input to motor function")
 	return #enf of function mortor
 
-def manualswitch()
+def manualswitch():
     return 0
 
 def closeDoor():
