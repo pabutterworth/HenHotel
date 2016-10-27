@@ -109,7 +109,7 @@ def manualswitch():
 def closeDoor():
   
     status = WORKING
-    finishtime = timer()+CLOSE_TIME
+    finishtime = timer() + CLOSE_TIME
     print finishtime
 
     motor(REVERSE) #start the motor closing
@@ -129,8 +129,33 @@ def closeDoor():
     motor(STOPMOTOR)
     return(status)
 
+def closeDoor():
+    status = WORKING
+    finishtime = timer() + OPEN_TIME
+    print finishtime
+
+    motor(FORWARD) #start the motor closing
+
+    while status == WORKING:
+        if timer() >= finishtime: #timer expired
+            debugprint ("TIMER EXPIRED")
+            status = TIMEOUT
+            pushover("Time Out - Check Ramp")
+        elif howfar() >= OPEN_DISTANCE:  #Distance sensor shows closed
+            print "Sensor states open"
+            status = SUCCESS         #All good
+        elif manualswitch() != 0:
+            pushover("Manual Abort")
+            debugprint ("Manual Abort")
+            status = SWITCHABORT
+    motor(STOPMOTOR)
+    return(status)
+
 print("Starting")
 GPIO.setmode(GPIO.BOARD)
+print "close door"
 closeDoor()
+print "open door"
+openDoor()
 print("Finishing")
 
