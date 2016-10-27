@@ -80,7 +80,9 @@ def pushover(push_text):
 def timer():
    now = time.localtime(time.time())
    print now[5]
-   return now[5]
+   ticks = time.ticks()
+   #return now[5]
+   return ticks
 
 def motor(direction):
 	if direction == FORWARD:
