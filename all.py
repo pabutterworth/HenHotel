@@ -86,7 +86,7 @@ def motor(direction):
 	elif direction == STOPMOTOR:
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.LOW)
-	else
+	else:
 		debugprint ("Invalid input to motor function")
 	return #enf of function mortor
 
