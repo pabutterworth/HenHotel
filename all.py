@@ -4,6 +4,11 @@ import RPi.GPIO as GPIO
 import time
 import httplib, urllib
 
+SUCCESS = 1
+TIMEOUT = 2
+SWITCHABORT = 3
+
+
 FORWARD = 1
 REVERSE = 2
 STOPMOTOR = 3
@@ -80,14 +85,17 @@ def motor(direction):
 		GPIO.setup(GPIO_MOTOR_REVERSE, GPIO.OUT)
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.HIGH)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.LOW)
+		debugprint("Motor:Forward")
 	elif direction == REVERSE:
 		GPIO.setup(GPIO_MOTOR_FORWARD, GPIO.OUT)
 		GPIO.setup(GPIO_MOTOR_REVERSE, GPIO.OUT)
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.HIGH)
-	elif direction == STOPMOTOR:
+		debugprint("Motor: Reverse")
+elif direction == STOPMOTOR:
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.LOW)
+		debugprint("Motor: Stop")
 	else:
 		debugprint ("Invalid input to motor function")
 	return #enf of function mortor
@@ -96,11 +104,7 @@ def manualswitch():
     return 0
 
 def closeDoor():
-    working = 0
-    timeout = 1
-    switchabort = 2
-    distanceabort = 3
-
+  
     status = working
     finishtime = timer()+CLOSE_TIME
 
@@ -109,15 +113,15 @@ def closeDoor():
     while status == working:
         if timer() >= finishtime: #timer expired
             debugprint ("TIMER EXPIRED")
-            status = timeout
+            status = TIMEOUT
             pushover("Time Out - Check Ramp")
         elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
             print "Sensor states closed"
-            status = closed         #All good
+            status = SUCCESS         #All good
         elif manualswitch() != 0:
             pushover("Manual Abort")
             debugprint ("Manual Abort")
-            status = switchabort
+            status = SWITCHABORT
     motor(STOPMOTOR)
     return(status)
 
