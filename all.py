@@ -114,6 +114,7 @@ def closeDoor():
 
     while status == WORKING:
         if timer() >= finishtime: #timer expired
+	    print timer() + finishtime
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
             pushover("Time Out - Check Ramp")
