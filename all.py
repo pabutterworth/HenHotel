@@ -52,8 +52,7 @@ def howfar():
   pulse_duration = pulse_end - pulse_start
   distance = pulse_duration * 17150
   distance = round(distance, 2)
-  message = "Distance: " +distance +" cm"
-  debugprint (message)
+  print ("Distance:"+distance+"cm")
   return distance
   #end of function howfar
 
