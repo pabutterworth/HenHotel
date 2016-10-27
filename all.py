@@ -107,7 +107,7 @@ def closeDoor():
             status = timeout
             pushover("Time Out - Check Ramp")
         elif distance() <= CLOSED:  #Distance sensor shows closed
-        	print "Sensor states closed"
+            print "Sensor states closed"
             status = closed         #All good
         elif manualswitch() != 0:
             pushover("Manual Abort")
