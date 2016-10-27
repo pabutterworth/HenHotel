@@ -92,7 +92,7 @@ def motor(direction):
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.HIGH)
 		debugprint("Motor: Reverse")
-elif direction == STOPMOTOR:
+	elif direction == STOPMOTOR:
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.LOW)
 		debugprint("Motor: Stop")
