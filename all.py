@@ -26,9 +26,9 @@ GPIO_TRIG = 23 #Distance sensor
 GPIO_ECHO = 24 #Distance sensor
 
 def debugprint(message):
-	if (debugmode == True)
-		print (message)
-	return
+    if (debugmode == True)
+	print (message)
+    return
 
 def howfar():
   #GPIO.setmode(GPIO.BOARD)
