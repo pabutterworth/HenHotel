@@ -117,5 +117,7 @@ def closeDoor():
     return(status)
 
 print("Starting")
+GPIO.setmode(GPIO.BOARD)
 closeDoor()
+print("Finishing")
 
