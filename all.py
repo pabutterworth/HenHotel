@@ -65,7 +65,7 @@ def howfar():
   return distance
   #end of function howfar
 
-def push(push_text):
+def pushover(push_text):
     title = "Hen Hotel :" +ctime()
     conn = httplib.HTTPSConnection("api.pushover.net:443")
     if debugmode == False:
