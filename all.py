@@ -73,19 +73,21 @@ def timer():
    return now[5]
 
 def motor(direction):
-	if direction == FORWARD
+	if direction == FORWARD:
 		GPIO.setup(GPIO_MOTOR_FORWARD, GPIO.OUT)
 		GPIO.setup(GPIO_MOTOR_REVERSE, GPIO.OUT)
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.HIGH)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.LOW)
-	if direction == REVERSE
+	elif direction == REVERSE:
 		GPIO.setup(GPIO_MOTOR_FORWARD, GPIO.OUT)
 		GPIO.setup(GPIO_MOTOR_REVERSE, GPIO.OUT)
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.HIGH)
-	if direction == STOPMOTOR
+	elif direction == STOPMOTOR:
 		GPIO.output(GPIO_MOTOR_FORWARD, GPIO.LOW)
 		GPIO.output(GPIO_MOTOR_REVERSE, GPIO.LOW)
+	else
+		debugprint ("Invalid input to motor function")
 	return #enf of function mortor
 
 def closeDoor():
