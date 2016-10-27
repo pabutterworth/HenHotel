@@ -3,6 +3,7 @@
 import RPi.GPIO as GPIO
 import time
 from time import ctime
+from time import sleep
 import httplib, urllib
 
 WORKING = 0
