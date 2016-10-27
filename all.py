@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import time
 import httplib, urllib
 
+WORKING = 0
 SUCCESS = 1
 TIMEOUT = 2
 SWITCHABORT = 3
@@ -105,12 +106,12 @@ def manualswitch():
 
 def closeDoor():
   
-    status = working
+    status = WORKING
     finishtime = timer()+CLOSE_TIME
 
     motor(REVERSE) #start the motor closing
 
-    while status == working:
+    while status == WORKING:
         if timer() >= finishtime: #timer expired
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
