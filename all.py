@@ -8,9 +8,12 @@ FORWARD = 1
 REVERSE = 2
 STOPMOTOR = 3
 
-MAXTIME = 30
-CLOSED = 10 #this is the readingf or a closed ramp
-OPEN = 50
+MAX_TIME = 30
+CLOSE_TIME = 10 #time to take to close
+OPEN_TIME = 50  
+
+OPEN_DISTANCE = 70
+CLOSED_DISTANCE = 20
 
 debugmode = True #Used to stop pushover messages being sent
 
@@ -99,7 +102,7 @@ def closeDoor():
     distanceabort = 3
 
     status = working
-    finishtime = timer()+MAXTIME
+    finishtime = timer()+CLOSED_TIME
 
     motor(REVERSE) #start the motor closing
 
@@ -108,7 +111,7 @@ def closeDoor():
             debugprint ("TIMER EXPIRED")
             status = timeout
             pushover("Time Out - Check Ramp")
-        elif howfar() <= CLOSED:  #Distance sensor shows closed
+        elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
             print "Sensor states closed"
             status = closed         #All good
         elif manualswitch() != 0:
