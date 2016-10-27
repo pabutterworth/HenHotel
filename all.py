@@ -36,7 +36,7 @@ def howfar():
   GPIO.setup(GPIO_ECHO,GPIO.IN)
 
   GPIO.output(GPIO_TRIG, False)
-  debugprint "Waiting For Sensor To Settle"
+  debugprint ("Waiting For Sensor To Settle")
   time.sleep(0.1)
 
   GPIO.output(GPIO_TRIG, True)
@@ -53,7 +53,7 @@ def howfar():
   distance = pulse_duration * 17150
   distance = round(distance, 2)
 
-  debugprint "Distance:",distance,"cm"
+  debugprint ("Distance:",distance,"cm")
   return distance
   #end of function howfar
 
@@ -101,7 +101,7 @@ def closeDoor():
 
     while status == working:
         if timer() >= finishtime: #timer expired
-        	debugprint "TIMER EXPIRED"
+        	debugprint ("TIMER EXPIRED")
             status = timeout
             pushover("Time Out - Check Ramp")
         elif distance() <= CLOSED:  #Distance sensor shows closed
@@ -109,7 +109,7 @@ def closeDoor():
             status = closed         #All good
         elif manualswitch() != 0:
             pushover("Manual Abort")
-            debugprint "Manual Abort"
+            debugprint ("Manual Abort")
             status = switchabort
     motor(STOPMOTOR)
     return(status)
