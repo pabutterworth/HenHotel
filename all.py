@@ -110,7 +110,7 @@ def closeDoor():
   
     status = WORKING
     finishtime = timer()+CLOSE_TIME
-    print "Finishtime = "+finishtime
+    print finishtime
 
     motor(REVERSE) #start the motor closing
 
