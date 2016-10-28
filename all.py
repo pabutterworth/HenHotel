@@ -217,10 +217,11 @@ def motor(direction):
 
 def manualswitch():
     result = 0
+"""
     GPIO.setup(GPIO_UP_SWITCH,GPIO.IN)
     if GPIO.input(GPIO_UP_SWITCH)==0:
 	print("Switch in Up position")
-	result = 1
+	result = 1"""
     return result
 
 def closeDoor():
