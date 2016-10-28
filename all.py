@@ -222,7 +222,7 @@ def manualswitch():
     if GPIO.input(GPIO_UP_SWITCH)==0:
 	print("Switch in Up position")
 	result = 1"""
-    return result
+    return 0
 
 def closeDoor():
   
