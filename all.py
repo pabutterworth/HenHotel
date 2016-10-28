@@ -271,7 +271,7 @@ def openDoor():
 #The Main App starts here
 
 print("Starting")
-
+"""
 if (howfar() == CLOSED_DISTANCE)
     if (opendoor() == SUCCESS) #Get into a know state at startup.
         door_status = open
@@ -296,7 +296,7 @@ while (quit == False)
     print sun.getSunriseTime( coords )['min']
     print sun.getSunsetTime( coords )['hr']
     print sun.getSunsetTime( coords )['min']
-	
+	"""
 	GPIO.setmode(GPIO.BOARD)
 	print "close door"
 	closeDoor()
