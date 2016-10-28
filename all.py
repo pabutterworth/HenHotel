@@ -297,11 +297,11 @@ while (quit == False)
     print sun.getSunsetTime( coords )['hr']
     print sun.getSunsetTime( coords )['min']
 	"""
-	GPIO.setmode(GPIO.BOARD)
-	print "close door"
-	closeDoor()
-	sleep(3)
-	print "open door"
-	openDoor()
-	print("Finishing")
+    GPIO.setmode(GPIO.BOARD)
+    print "close door"
+    closeDoor()
+    sleep(3)
+    print "open door"
+    openDoor()
+    print("Finishing")
 
