@@ -45,7 +45,8 @@ def main():
     rise,set = calcsunriseandsunset(today)
     print rise, set
     now = datetime.now()
-    print "Now = " +now
+    print "Now = " 
+    print now
     if set > now:
         print "Night"
     if rise > now:
