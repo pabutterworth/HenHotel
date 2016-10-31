@@ -37,8 +37,8 @@ def calcsunriseandsunset(dt):
     return (calculatetimefromjuliandate(jrise), calculatetimefromjuliandate(jset))
 
     
-longitude=LONGITUDE #East
-latitude=LATITUDE
+longitude=51.1324 #East
+latitude=0.2637
 
 def main():
     today=date.today()
