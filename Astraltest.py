@@ -1,5 +1,5 @@
 import datetime
-from astral importAstral
+from astral import Astral
 
 city_name = 'London'
 
