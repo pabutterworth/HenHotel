@@ -37,13 +37,18 @@ def calcsunriseandsunset(dt):
     return (calculatetimefromjuliandate(jrise), calculatetimefromjuliandate(jset))
 
     
-longitude= 0.2637#East
+longitude= 0.2637 #East
 latitude=51.1324
 
 def main():
     today=date.today()
     rise,set = calcsunriseandsunset(today)
     print rise, set
+    now = datetime.datetime.now()
+    if sunset > now
+        print "Night"
+    if surise > now
+        print "day"
 
 if __name__ == '__main__':
     main()
