@@ -46,7 +46,7 @@ def main():
     print rise, set
     now = datetime.now()
     print "Now = " 
-    print now.time()
+    print now.clock()
     if set > now:
         print "Night"
     if rise > now:
