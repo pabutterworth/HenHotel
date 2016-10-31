@@ -15,7 +15,8 @@ timezone =city.timezone
 print('Timezone: %s' %timezone)
 
 
-print('Latitude: %.02f; Longitude: %.02f\n' % \ (city.latitude,city.longitude))
+print('Latitude: %.02f; Longitude: %.02f\n' % \ 
+(city.latitude,city.longitude))
 
 
 sun =city.sun(date=datetime.date(2009, 4, 22),local=True)
