@@ -15,7 +15,7 @@ timezone =city.timezone
 print('Timezone: %s' %timezone)
 
 
-print('Latitude: %.02f; Longitude: %.02f\n' % \ 
+print('Latitude: %.02f; Longitude: %.02f\n' % \
 (city.latitude,city.longitude))
 
 
