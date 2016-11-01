@@ -5,7 +5,7 @@ from time import sleep
 import math 
 from pushover import push
 from doorcontrol import opendoor, closedoor
-fro sun3 import calcsunriseandsunset
+from sun3 import calcsunriseandsunset
 MAXTIME = 30
 CLOSED = 10 #this is the readingf or a closed ramp
 OPEN = 50
