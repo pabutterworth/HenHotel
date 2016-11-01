@@ -59,9 +59,10 @@ def main():
     daytime=False
     if nowHour > sunRiseHour and nowHour < sunSetHour:
 	daytime=True
-
     if nowHour == sunRiseHour and nowMins >= sunRiseMins:
 	daytime=True
+    if nowHour == sunSetHour and nowMins < sunSetMins:
+        daytime=True
 
     if daytime==True:
 	print "Its daytime"
