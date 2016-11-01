@@ -1,6 +1,7 @@
 #!/usr/bin/env python2.7  
 
 from datetime import date, timedelta, datetime, time, tzinfo
+from time import sleep
 import math 
 from pushover import push
 
@@ -76,7 +77,7 @@ def main():
     quit = False
     
     while (quit == False):
-	time.sleep(30)
+	sleep(30)
 	today=date.today()
     	sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
    	now = datetime.now()
