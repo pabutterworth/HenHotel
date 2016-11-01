@@ -81,7 +81,9 @@ def main():
 	today=date.today()
     	sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
    	now = datetime.now()
-	print"Its " +now
+	print "Its " 
+	print now
+	push ("test")
     	nowHour = now.hour
     	nowMins = now.minute
     	daytime=False
@@ -94,12 +96,14 @@ def main():
 	
 	if itsdaytime == True and daytime == False:
 	    push("Closing door")
-	    print"Its nighttime at " +now
+	    print "Its nighttime at "
+	    print now
 	    itsdaytime = False
 	
 	if itsdayrime == False and dattime == True:
 	    push("Opening Door")
-	    print"Its daytime at " +now
+	    print "Its daytime at "
+	    print now
 	    itsdaytime = True
 	# End of while
 #End of main
