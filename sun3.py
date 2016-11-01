@@ -2,6 +2,7 @@
 
 from datetime import date, timedelta, datetime, time, tzinfo
 import math 
+from pushover import push
 
 def sinrad(deg):
     return math.sin(deg * math.pi/180)
@@ -55,8 +56,9 @@ def main():
     now = datetime.now()
     nowHour = now.hour
     nowMins = now.minute
-	
+    	
     daytime=False
+
     if nowHour > sunRiseHour and nowHour < sunSetHour:
 	daytime=True
     if nowHour == sunRiseHour and nowMins >= sunRiseMins:
@@ -66,8 +68,39 @@ def main():
 
     if daytime==True:
 	print "Its daytime"
+	itsdaytime = True
     else:
 	print "Its nighttime"
+	itsdaytime = False
+	
+    quit = False
+    
+    while (!quit)
+	time.sleep(30)
+	today=date.today()
+    	sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
+   	now = datetime.now()
+    	nowHour = now.hour
+    	nowMins = now.minute
+    	daytime=False
+   	if nowHour > sunRiseHour and nowHour < sunSetHour:
+	    daytime=True
+    	if nowHour == sunRiseHour and nowMins >= sunRiseMins:
+	    daytime=True
+    	if nowHour == sunSetHour and nowMins < sunSetMins:
+            daytime=True
+	
+	if (itsdaytime == True and daytime == FALSE)
+	    push("Closing door")
+	    itsdaytime = False
+	
+	if (itsdayrime == False and dattime == True)
+	    push("Opening Door")
+	    itsdaytime = True
+	# End of while
+#End of main
+			
+	
 
 if __name__ == '__main__':
    main()
