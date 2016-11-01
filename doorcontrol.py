@@ -8,8 +8,6 @@ import math
 import datetime
 from pushover import push
 
-coords = {'longitude' : 0.34, 'latitude' : 51.1  }
-
 WORKING = 0
 SUCCESS = 1
 TIMEOUT = 2
@@ -97,7 +95,6 @@ def manualswitch():
     return 0
 
 def closeDoor():
-  
     status = WORKING
     finishtime = timer() + CLOSE_TIME
     print finishtime
