@@ -90,11 +90,11 @@ def main():
     	if nowHour == sunSetHour and nowMins < sunSetMins:
             daytime=True
 	
-	if (itsdaytime == True and daytime == FALSE)
+	if itsdaytime == True and daytime == False:
 	    push("Closing door")
 	    itsdaytime = False
 	
-	if (itsdayrime == False and dattime == True)
+	if itsdayrime == False and dattime == True:
 	    push("Opening Door")
 	    itsdaytime = True
 	# End of while
