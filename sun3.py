@@ -100,7 +100,7 @@ def main():
 	    print now
 	    itsdaytime = False
 	
-	if itsdayrime == False and dattime == True:
+	if itsdaytime == False and daytime == True:
 	    push("Opening Door")
 	    print "Its daytime at "
 	    print now
