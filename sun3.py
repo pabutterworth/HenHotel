@@ -53,15 +53,9 @@ def main():
     sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
     print sunRiseHour,sunRiseMins,sunSetHour,sunSetMins
     now = datetime.now()
-    print "Now = " 
-    print now
     nowHour = now.hour
     nowMins = now.minute
-    print "Hour = "
-    print nowHour
-    print "Mins = "
-    print nowMins
-    
+	
     daytime=False
     if nowHour > sunRiseHour and nowHour < sunSetHour:
 	daytime=True
