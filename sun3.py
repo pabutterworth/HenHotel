@@ -75,7 +75,7 @@ def main():
 	
     quit = False
     
-    while (!quit)
+    while (quit == False)
 	time.sleep(30)
 	today=date.today()
     	sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
