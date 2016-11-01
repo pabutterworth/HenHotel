@@ -1,10 +1,9 @@
 import time
-from measure import howfar
 from datetime import date, timedelta, datetime, time, tzinfo
 from time import sleep
 import math 
 from pushover import push
-from doorcontrol import opendoor, closedoor
+from doorcontrol import openDoor, closeDoor, howfar
 from sun3 import calcsunriseandsunset
 MAXTIME = 30
 CLOSED = 10 #this is the readingf or a closed ramp
