@@ -15,4 +15,3 @@ def push(push_text):
     print "Pushover:  " + push_text
     return  # End of function push
 
-push("Door opened successfully")
