@@ -1,5 +1,5 @@
 import time
-from distance import howfar
+from measure import howfar
 from datetime import date, timedelta, datetime, time, tzinfo
 from time import sleep
 import math 
