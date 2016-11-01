@@ -3,7 +3,7 @@ from time import ctime
 APP_TOKEN = "ap1zxxfpdcnbkkfk5fk9daoob78hpb"
 USER_ID = "uZ8cbsrmeoMiMJEU6MzHTVKNwrPUr2"
 
-debug = True
+debug = False
 
 def push(push_text):
     title = "Hen Hotel :" +ctime()
