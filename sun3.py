@@ -83,7 +83,6 @@ def main():
    	now = datetime.now()
 	print "Its " 
 	print now
-	push ("test")
     	nowHour = now.hour
     	nowMins = now.minute
     	daytime=False
