@@ -54,7 +54,7 @@ def main():
         sunSetMins += DELAY
         if sunSetMins >= 60:
             sunSetHour += 1
-            sunSetMins -= DELAY
+            sunSetMins -= 60
         
         now = datetime.now()
         nowHour = now.hour
