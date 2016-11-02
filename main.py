@@ -53,8 +53,8 @@ def main():
         #Add a delay after sunset do give the birds time to go in
         sunSetMins = sunSetMins + DELAY
         if sunSetMins >= 60:
-            sunSetHour = SunSetHour +1
-            sunSetMins = SunSetMins - DELAY
+            sunSetHour += 1
+            sunSetMins += DELAY
         
         now = datetime.now()
         nowHour = now.hour
