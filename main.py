@@ -60,7 +60,7 @@ def main():
             daytime=True
             
         #Just an hourly ping to see if the wifi stops working
-        if oldHour != nowHour
+        if oldHour != nowHour:
             push("New Hour:)
             print now
             oldHour = nowHour
