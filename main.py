@@ -42,14 +42,13 @@ def main():
         itsdaytime = False
     
     quit = False
+    oldhour = nowHour
     
     while (quit == False):
         sleep(30) # Extend this later, or replace with an interruptable sleep
         today=date.today()
         sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
         now = datetime.now()
-        print "Its " 
-        print now
         nowHour = now.hour
         nowMins = now.minute
         daytime=False
@@ -59,6 +58,12 @@ def main():
             daytime=True
         if nowHour == sunSetHour and nowMins < sunSetMins:
             daytime=True
+            
+        #Just an hourly ping to see if the wifi stops working
+        if oldHour != nowHour
+            push("New Hour:)
+            print now
+            oldHour = nowHour
         
         if itsdaytime == True and daytime == False:
             push("Closing door")
