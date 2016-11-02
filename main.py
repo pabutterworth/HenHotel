@@ -1,6 +1,6 @@
 import time
-from datetime import date, timedelta, datetime, time, tzinfo, ctime
-from time import sleep
+from datetime import date, timedelta, datetime, time, tzinfo
+from time import sleep, ctime
 import math 
 from pushover import push
 from doorcontrol import openDoor, closeDoor, howfar
