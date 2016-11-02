@@ -61,7 +61,7 @@ def main():
             
         #Just an hourly ping to see if the wifi stops working
         if oldHour != nowHour:
-            msg = "New Hour" + now
+            msg = "New Hour"
             push(msg)
             print msg
             oldHour = nowHour
