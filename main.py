@@ -42,7 +42,7 @@ def main():
         itsdaytime = False
     
     quit = False
-    oldhour = nowHour
+    oldHour = nowHour
     
     while (quit == False):
         sleep(30) # Extend this later, or replace with an interruptable sleep
