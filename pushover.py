@@ -20,7 +20,7 @@ def push(push_text, urgent=1):
     return  # End of function push
 
 
-def main()
+def main():
     push("normal message")
     push("Priority message 1",1)
     push("Priority message 2",2)
