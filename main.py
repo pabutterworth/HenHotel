@@ -51,10 +51,10 @@ def main():
         today=date.today()
         sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
         #Add a delay after sunset do give the birds time to go in
-        sunSetMins = sunSetMins + DELAY
+        sunSetMins += DELAY
         if sunSetMins >= 60:
             sunSetHour += 1
-            sunSetMins += DELAY
+            sunSetMins -= DELAY
         
         now = datetime.now()
         nowHour = now.hour
