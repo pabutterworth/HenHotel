@@ -5,7 +5,11 @@ USER_ID = "uZ8cbsrmeoMiMJEU6MzHTVKNwrPUr2"
 
 debug = False
 
-def push(push_text):
+"""urgent - send as -2 to generate no notification/alert, -1 to 
+always send as a quiet notification, 1 to display as high-priority 
+and bypass the user's quiet hours, or 2 to also require confirmation from the user"""
+
+def push(push_text, urgent=1):
     title = "Hen Hotel :" +ctime()
     conn = httplib.HTTPSConnection("api.pushover.net:443")
     if debug == False:
