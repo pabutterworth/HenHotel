@@ -19,3 +19,12 @@ def push(push_text, urgent=1):
     print "Pushover:  " + push_text
     return  # End of function push
 
+
+def main()
+    push("normal message")
+    push("Priority message 1",1)
+    push("Priority message 2",2)
+        
+        
+if __name__ == '__main__':
+   main()
