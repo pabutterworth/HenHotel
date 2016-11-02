@@ -1,5 +1,5 @@
 import time
-from datetime import date, timedelta, datetime, time, tzinfo
+from datetime import date, timedelta, datetime, time, tzinfo, ctime
 from time import sleep
 import math 
 from pushover import push
@@ -67,19 +67,19 @@ def main():
         if nowHour == sunSetHour and nowMins < sunSetMins:
             daytime=True
             
-      
-            
+      print ("Time now is" +ctime())
+"""
         #Just an hourly ping to see if the wifi stops working
         if oldHour != nowHour:
             msg = "New Hour"
             push(msg)
             print msg
             oldHour = nowHour
-        
+"""
         if itsdaytime == True and daytime == False:
             push("Closing door")
             print "Its nighttime at "
-            print now
+            print now 
             itsdaytime = False
         
         if itsdaytime == False and daytime == True:
