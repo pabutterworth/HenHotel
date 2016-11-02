@@ -9,6 +9,8 @@ MAXTIME = 30
 CLOSED = 10 #this is the readingf or a closed ramp
 OPEN = 50
 
+DELAY = 20 # Delay sfter sunset to close door
+
 longitude=0.2637 #East
 latitude=51.1324
 
@@ -48,6 +50,12 @@ def main():
         sleep(30) # Extend this later, or replace with an interruptable sleep
         today=date.today()
         sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
+        #Add a delay after sunset do give the birds time to go in
+        sunSetMins = sunSetMins + DELAY
+        if sunSetMins >= 60:
+            sunSetHour = SunSetHour +1
+            sunSetMins = SunSetMins - DELAY
+        
         now = datetime.now()
         nowHour = now.hour
         nowMins = now.minute
@@ -58,6 +66,8 @@ def main():
             daytime=True
         if nowHour == sunSetHour and nowMins < sunSetMins:
             daytime=True
+            
+      
             
         #Just an hourly ping to see if the wifi stops working
         if oldHour != nowHour:
