@@ -67,7 +67,7 @@ def main():
         if nowHour == sunSetHour and nowMins < sunSetMins:
             daytime=True
             
-        print("Time now is" + ctime())
+        #print("Time now is" + ctime())
         """#Just an hourly ping to see if the wifi stops working
         if oldHour != nowHour:
             msg = "New Hour"
