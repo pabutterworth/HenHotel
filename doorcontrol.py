@@ -105,7 +105,7 @@ def closeDoor():
         if timer() >= finishtime: #timer expired
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
-            pushover("Time Out - Check Ramp")
+            pushover("Time Out - Check Ramp",2)
         elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
             print "Sensor states closed"
             status = SUCCESS         #All good
@@ -127,7 +127,7 @@ def openDoor():
         if timer() >= finishtime: #timer expired
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
-            pushover("Time Out - Check Ramp")
+            pushover("Time Out - Check Ramp",2)
         elif howfar() >= OPEN_DISTANCE:  #Distance sensor shows closed
             print "Sensor states open"
             status = SUCCESS         #All good
