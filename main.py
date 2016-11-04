@@ -77,12 +77,14 @@ def main():
          
         if itsdaytime == True and daytime == False:
             push("Closing door")
+            closeDoor()
             print "Its nighttime at "
             print now 
             itsdaytime = False
         
         if itsdaytime == False and daytime == True:
             push("Opening Door")
+            openDoor()
             print "Its daytime at "
             print now
             itsdaytime = True
