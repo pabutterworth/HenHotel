@@ -1,4 +1,5 @@
 import time
+import RPi.GPIO as GPIO
 from datetime import date, timedelta, datetime, time, tzinfo
 from time import sleep, ctime
 import math 
@@ -25,7 +26,7 @@ def main():
     print sunRiseHour,sunRiseMins,sunSetHour,sunSetMins
     now = datetime.now()
     nowHour = now.hour
-    nowMins = now.minute
+    nowMins = now.minut
 
     GPIO.setmode(GPIO.BOARD)
         
