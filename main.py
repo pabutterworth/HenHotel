@@ -26,6 +26,8 @@ def main():
     now = datetime.now()
     nowHour = now.hour
     nowMins = now.minute
+
+    GPIO.setmode(GPIO.BOARD)
         
     daytime=False
 
