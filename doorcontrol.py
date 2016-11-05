@@ -7,6 +7,7 @@ import httplib, urllib
 import math
 import datetime
 from pushover import push
+debugmode = True
 
 WORKING = 0
 SUCCESS = 1
