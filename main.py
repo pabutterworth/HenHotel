@@ -26,7 +26,7 @@ def main():
     print sunRiseHour,sunRiseMins,sunSetHour,sunSetMins
     now = datetime.now()
     nowHour = now.hour
-    nowMins = now.minut
+    nowMins = now.minute
 
     GPIO.setmode(GPIO.BOARD)
         
