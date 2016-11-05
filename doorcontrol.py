@@ -72,6 +72,7 @@ def timer():
    return ticks
 
 def motor(direction):
+	"""
 	if direction == FORWARD:
 		GPIO.setup(GPIO_MOTOR_FORWARD, GPIO.OUT)
 		GPIO.setup(GPIO_MOTOR_REVERSE, GPIO.OUT)
@@ -90,6 +91,7 @@ def motor(direction):
 		debugprint("Motor: Stop")
 	else:
 		debugprint ("Invalid input to motor function")
+	"""
 	return #enf of function mortor
 
 def manualswitch():
