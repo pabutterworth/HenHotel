@@ -141,5 +141,9 @@ def openDoor():
     motor(STOPMOTOR)
     return(status)
 
+def main():
+	oprnDoor()
 
+if __name__ == '__main__':
+   main()
 
