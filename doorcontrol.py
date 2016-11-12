@@ -142,7 +142,7 @@ def openDoor():
     return(status)
 
 def main():
-	oprnDoor()
+	openDoor()
 
 if __name__ == '__main__':
    main()
