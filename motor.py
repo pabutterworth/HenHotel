@@ -3,26 +3,28 @@ http://deepaksinghviblog.blogspot.com/2014/08/raspberrypi-to-run-dc-motor-using-
 """
 import RPi.GPIO as GPIO
 from time import sleep
+FORWARD = 15
+REVERSE = 21
 
 class Motor:
 
 	def forward(x):
 		GPIO.setmode(GPIO.BOARD)
-		GPIO.setup(13, GPIO.OUT)
-		GPIO.setup(15, GPIO.OUT)
-		GPIO.output(13, GPIO.HIGH)
+		GPIO.setup(FORWARD, GPIO.OUT)
+		GPIO.setup(REVERSE, GPIO.OUT)
+		GPIO.output(FORWARD, GPIO.HIGH)
 		sleep(x)
-		GPIO.output(13, GPIO.LOW)
+		GPIO.output(FORWARD, GPIO.LOW)
 		GPIO.cleanup()
 		return 
 
 	def reverse(x):
 		GPIO.setmode(GPIO.BOARD)
-		GPIO.setup(13, GPIO.OUT)
-		GPIO.setup(15, GPIO.OUT)
-		GPIO.output(15, GPIO.HIGH)
+		GPIO.setup(FORWARD, GPIO.OUT)
+		GPIO.setup(REVERSR, GPIO.OUT)
+		GPIO.output(REVERSE, GPIO.HIGH)
 		sleep(x)
-		GPIO.output(15, GPIO.LOW)
+		GPIO.output(REVERSE, GPIO.LOW)
 		GPIO.cleanup()
 		return
 
