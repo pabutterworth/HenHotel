@@ -34,7 +34,7 @@ APP_TOKEN = "ap1zxxfpdcnbkkfk5fk9daoob78hpb"
 USER_ID = "uZ8cbsrmeoMiMJEU6MzHTVKNwrPUr2"
 
 #GPIO PINS
-GPIO_MOTOR_FORWARD = 13
+GPIO_MOTOR_FORWARD = 21
 GPIO_MOTOR_REVERSE = 15
 GPIO_TRIG = 23 #Distance sensor
 GPIO_ECHO = 24 #Distance sensor
