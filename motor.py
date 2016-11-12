@@ -28,7 +28,7 @@ class Motor:
 
 
 def main():
-    forward(5)
+    Motor.forward(5)
 	
 if __name__ == '__main__':
    main()
