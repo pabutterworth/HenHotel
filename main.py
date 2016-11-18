@@ -15,12 +15,27 @@ DELAY = 20 # Delay sfter sunset to close door
 longitude=0.2637 #East
 latitude=51.1324
 
+import logging
+import logging.handlers
+
+
+
 def timer():
    now = time.localtime(time.time())
    return now[5]
 
 
 def main():
+   log = logging.getLogger(__name__)
+
+   log.setLevel(logging.DEBUG)
+
+   handler = logging.handlers.SysLogHandler(address = '/dev/log')
+
+   formatter = logging.Formatter('%(module)s.%(funcName)s: %(message)s')
+   handler.setFormatter(formatter)
+
+   log.addHandler(handler)
     today=date.today()
     sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
     print sunRiseHour,sunRiseMins,sunSetHour,sunSetMins
@@ -41,9 +56,11 @@ def main():
 
     if daytime==True:
         print "Its daytime"
+        log.debug('Daytime')
         itsdaytime = True
     else:
         print "Its nighttime"
+        log.debug('Daytime')
         itsdaytime = False
     
     quit = False
@@ -80,6 +97,7 @@ def main():
          
         if itsdaytime == True and daytime == False:
             push("Closing door")
+            log.debug('Closing door')
             closeDoor()
             print "Its nighttime at "
             print now 
@@ -87,6 +105,7 @@ def main():
         
         if itsdaytime == False and daytime == True:
             push("Opening Door")
+            log.debug('Opening door')
             openDoor()
             print "Its daytime at "
             print now
