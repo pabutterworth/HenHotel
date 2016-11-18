@@ -60,7 +60,7 @@ def main():
         itsdaytime = True
     else:
         print "Its nighttime"
-        log.debug('Daytime')
+        log.debug('Nighttime')
         itsdaytime = False
     
     quit = False
