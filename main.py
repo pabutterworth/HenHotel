@@ -35,7 +35,7 @@ def main():
    formatter = logging.Formatter('%(module)s.%(funcName)s: %(message)s')
    handler.setFormatter(formatter)
 
-   log.addHandler(handler)
+    log.addHandler(handler)
     today=date.today()
     sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
     print sunRiseHour,sunRiseMins,sunSetHour,sunSetMins
