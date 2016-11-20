@@ -20,8 +20,8 @@ REVERSE = 2
 STOPMOTOR = 3
 
 MAX_TIME = 30
-CLOSE_TIME = 10 #time to take to close
-OPEN_TIME = 10 #time to open  
+CLOSE_TIME = 20 #time to take to close
+OPEN_TIME = 20 #time to open  
 
 OPEN_DISTANCE = 70
 CLOSED_DISTANCE = 20
