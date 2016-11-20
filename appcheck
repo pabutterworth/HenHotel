@@ -1,4 +1,4 @@
-from psutil import pids,Process
+import psutil
 
 def verification():
     for pid in psutil.pids():
