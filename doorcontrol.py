@@ -20,8 +20,8 @@ REVERSE = 2
 STOPMOTOR = 3
 
 MAX_TIME = 30
-CLOSE_TIME = 20 #time to take to close
-OPEN_TIME = 20 #time to open  
+CLOSE_TIME = 10 #time to take to close
+OPEN_TIME = 10 #time to open  
 
 OPEN_DISTANCE = 70
 CLOSED_DISTANCE = 20
@@ -108,12 +108,12 @@ def closeDoor():
         if timer() >= finishtime: #timer expired
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
-            pushover("Time Out - Check Ramp")
+            push("Time Out - Check Ramp")
         elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
             print "Sensor states closed"
             status = SUCCESS         #All good
         elif manualswitch() != 0:
-            pushover("Manual Abort")
+            push("Manual Abort")
             debugprint ("Manual Abort")
             status = SWITCHABORT
     motor(STOPMOTOR)
@@ -130,12 +130,12 @@ def openDoor():
         if timer() >= finishtime: #timer expired
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
-            pushover("Time Out - Check Ramp")
+            push("Time Out - Check Ramp")
         elif howfar() >= OPEN_DISTANCE:  #Distance sensor shows closed
             print "Sensor states open"
             status = SUCCESS         #All good
         elif manualswitch() != 0:
-            pushover("Manual Abort")
+            push("Manual Abort")
             debugprint ("Manual Abort")
             status = SWITCHABORT
     motor(STOPMOTOR)
