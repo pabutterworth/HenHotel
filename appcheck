@@ -1,9 +1,0 @@
-import psutil
-
-def verification():
-    for pid in psutil.pids():
-        p = psutil.Process(pid)
-        if p.name() == "python.exe" and len(p.cmdline()) > 1 and "HenHotel.py" in p.cmdline()[1]:
-            print ("running")
-            
-            
