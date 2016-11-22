@@ -2,6 +2,7 @@ import socket
 import sys
 import time
 
+
 def get_lock(process_name):
     # Without holding a reference to our socket somewhere it gets garbage
     # collected when the function exits
