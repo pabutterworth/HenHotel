@@ -151,7 +151,7 @@ def closeDoorTest():
     
 def main():
     GPIO.setmode(GPIO.BOARD)
-    char = getch()
+
     closeDoorTest()
 
 if __name__ == '__main__':
