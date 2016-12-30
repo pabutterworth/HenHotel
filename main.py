@@ -6,9 +6,9 @@ import math
 from pushover import push
 from doorcontrol import openDoor, closeDoor, howfar
 from sun3 import calcsunriseandsunset
-MAXTIME = 30
-CLOSED = 20 #this is the readingf or a closed ramp
-OPEN = 75
+MAXTIME = 164
+CLOSED = 164 #this is the readingf or a closed ramp
+OPEN = 164
 
 DELAY = 20 # Delay sfter sunset to close door
 
