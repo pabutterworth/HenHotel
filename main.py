@@ -67,7 +67,7 @@ def main():
     oldHour = nowHour
     try:
 	 
-    while (quit == False):
+        while (quit == False):
 		sleep(30) # Extend this later, or replace with an interruptable sleep
 		today=date.today()
 		sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
