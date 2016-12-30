@@ -109,9 +109,6 @@ def closeDoor():
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
             push("Time Out - Check Ramp")
-"""elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
-            print "Sensor states closed"
-            status = SUCCESS         #All good"""
 
     motor(STOPMOTOR)
     return(status)
