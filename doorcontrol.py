@@ -125,13 +125,7 @@ def openDoor():
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
             push("Time Out - Check Ramp")
- """       elif howfar() >= OPEN_DISTANCE:  #Distance sensor shows closed
-            print "Sensor states open"
-            status = SUCCESS         #All good"""
-        elif manualswitch() != 0:
-            push("Manual Abort")
-            debugprint ("Manual Abort")
-            status = SWITCHABORT
+
     motor(STOPMOTOR)
     return(status)
 
