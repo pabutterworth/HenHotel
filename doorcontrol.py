@@ -142,7 +142,7 @@ def closeDoorTest():
 
 	
     while status == WORKING:
-	fred=fred
+	fred=1
 	#print timer()
         #status = SUCCESS         #All good
     motor(STOPMOTOR)
