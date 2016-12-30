@@ -65,53 +65,52 @@ def main():
     
     quit = False
     oldHour = nowHour
-   
-   try:
+    try:
 	 
     while (quit == False):
-        sleep(30) # Extend this later, or replace with an interruptable sleep
-        today=date.today()
-        sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
-        #Add a delay after sunset do give the birds time to go in
-        sunSetMins += DELAY
-        if sunSetMins >= 60:
-            sunSetHour += 1
-            sunSetMins -= 60
-        
-        now = datetime.now()
-        nowHour = now.hour
-        nowMins = now.minute
-        daytime=False
-        if nowHour > sunRiseHour and nowHour < sunSetHour:
-            daytime=True
-        if nowHour == sunRiseHour and nowMins >= sunRiseMins:
-            daytime=True
-        if nowHour == sunSetHour and nowMins < sunSetMins:
-            daytime=True
-            
-        #print("Time now is" + ctime())
-        """#Just an hourly ping to see if the wifi stops working
-        if oldHour != nowHour:
-            msg = "New Hour"
-            push(msg)
-            print msg
-            oldHour = nowHour"""
-         
-        if itsdaytime == True and daytime == False:
-            push("Closing door")
-            log.debug('Closing door')
-            closeDoor()
-            print "Its nighttime at "
-            print now 
-            itsdaytime = False
-        
-        if itsdaytime == False and daytime == True:
-            push("Opening Door")
-            log.debug('Opening door')
-            openDoor()
-            print "Its daytime at "
-            print now
-            itsdaytime = True
+		sleep(30) # Extend this later, or replace with an interruptable sleep
+		today=date.today()
+		sunRiseHour,sunRiseMins,sunSetHour,sunSetMins = calcsunriseandsunset(today)
+		#Add a delay after sunset do give the birds time to go in
+		sunSetMins += DELAY
+		if sunSetMins >= 60:
+		    sunSetHour += 1
+		    sunSetMins -= 60
+
+		now = datetime.now()
+		nowHour = now.hour
+		nowMins = now.minute
+		daytime=False
+		if nowHour > sunRiseHour and nowHour < sunSetHour:
+		    daytime=True
+		if nowHour == sunRiseHour and nowMins >= sunRiseMins:
+		    daytime=True
+		if nowHour == sunSetHour and nowMins < sunSetMins:
+		    daytime=True
+
+		#print("Time now is" + ctime())
+		"""#Just an hourly ping to see if the wifi stops working
+		if oldHour != nowHour:
+		    msg = "New Hour"
+		    push(msg)
+		    print msg
+		    oldHour = nowHour"""
+
+		if itsdaytime == True and daytime == False:
+		    push("Closing door")
+		    log.debug('Closing door')
+		    closeDoor()
+		    print "Its nighttime at "
+		    print now 
+		    itsdaytime = False
+
+		if itsdaytime == False and daytime == True:
+		    push("Opening Door")
+		    log.debug('Opening door')
+		    openDoor()
+		    print "Its daytime at "
+		    print now
+		    itsdaytime = True
     # End of while
 #End of main
 #test
