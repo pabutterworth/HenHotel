@@ -155,10 +155,6 @@ def closeDoorTest():
             print ("Finish Time")
 	    print timer()
             status = SUCCESS         #All good
- """    elif manualswitch() != 0:
-            push("Manual Abort")
-            debugprint ("Manual Abort")
-            status = SWITCHABORT
     motor(STOPMOTOR)
     return(status)
     
