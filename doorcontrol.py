@@ -15,21 +15,21 @@ TIMEOUT = 2
 SWITCHABORT = 3
 
 
-FORWARD = 2
-REVERSE = 1
+FORWARD = 1
+REVERSE = 2
 STOPMOTOR = 3
 
 MAX_TIME = 40
-CLOSE_TIME = 40 #time to take to close
-OPEN_TIME = 40 #time to open  
+CLOSE_TIME = 120 #time to take to close
+OPEN_TIME = 120 #time to open  
 
 OPEN_DISTANCE = 70
-CLOSED_DISTANCE = 20
+CLOSED_DISTANCE = 24
 LEEWAY = 1
 
 #GPIO PINS
-GPIO_MOTOR_FORWARD = 21
-GPIO_MOTOR_REVERSE = 15
+GPIO_MOTOR_FORWARD = 15
+GPIO_MOTOR_REVERSE = 21
 GPIO_TRIG = 23 #Distance sensor
 GPIO_ECHO = 24 #Distance sensor
 GPIO_UP_SWITCH = 29
@@ -109,10 +109,10 @@ def closeDoor():
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
             push("Time Out - Check Ramp")
-        elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
+"""        elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
             print "Sensor states closed"
             status = SUCCESS         #All good
-        elif manualswitch() != 0:
+"""        elif manualswitch() != 0:
             push("Manual Abort")
             debugprint ("Manual Abort")
             status = SWITCHABORT
@@ -131,19 +131,41 @@ def openDoor():
             debugprint ("TIMER EXPIRED")
             status = TIMEOUT
             push("Time Out - Check Ramp")
-        elif howfar() >= OPEN_DISTANCE:  #Distance sensor shows closed
+ """       elif howfar() >= OPEN_DISTANCE:  #Distance sensor shows closed
             print "Sensor states open"
             status = SUCCESS         #All good
-        elif manualswitch() != 0:
+ """       elif manualswitch() != 0:
             push("Manual Abort")
             debugprint ("Manual Abort")
             status = SWITCHABORT
     motor(STOPMOTOR)
     return(status)
 
+def openDoorMEASURE():
+    status = WORKING
+    finishtime = timer() + OPEN_TIME
+    starttime = timer()
+    print ("Start time")
+    print starttime
+
+    motor(FORWARD) #start the motor closing
+
+    while status == WORKING:
+        if getch() is not none
+            print ("Finish Time")
+	    print timer()
+            status = SUCCESS         #All good
+ """    elif manualswitch() != 0:
+            push("Manual Abort")
+            debugprint ("Manual Abort")
+            status = SWITCHABORT
+    motor(STOPMOTOR)
+    return(status)
+    
 def main():
     GPIO.setmode(GPIO.BOARD)
-    closeDoor()
+    char = getch()
+    closeDoorMEASURE()
 
 if __name__ == '__main__':
    main()
