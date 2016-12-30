@@ -112,10 +112,7 @@ def closeDoor():
 """elif howfar() <= CLOSED_DISTANCE:  #Distance sensor shows closed
             print "Sensor states closed"
             status = SUCCESS         #All good"""
-	elif manualswitch() != 0:
-            push("Manual Abort")
-            debugprint ("Manual Abort")
-            status = SWITCHABORT
+
     motor(STOPMOTOR)
     return(status)
 
