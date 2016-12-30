@@ -20,9 +20,9 @@ FORWARD = 1
 REVERSE = 2
 STOPMOTOR = 3
 
-MAX_TIME = 40
-CLOSE_TIME = 120 #time to take to close
-OPEN_TIME = 120 #time to open  
+MAX_TIME = 164
+CLOSE_TIME = 164 #time to take to close
+OPEN_TIME = 164 #time to open  
 
 OPEN_DISTANCE = 70
 CLOSED_DISTANCE = 24
@@ -152,7 +152,7 @@ def main():
     starttime = time.time()
     try:
 	GPIO.setmode(GPIO.BOARD)
-  	closeDoorTest()
+  	closeDoor()
   
     except KeyboardInterrupt:  
     # here you put any code you want to run before the program   
