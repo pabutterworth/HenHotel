@@ -137,7 +137,7 @@ def closeDoorTest():
     print ("Start time")
     print starttime
 
-    motor(REVERSE) #start the motor closing
+    motor(FORWARD) #start the motor closing
 
 	
     while status == WORKING:
