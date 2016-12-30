@@ -114,11 +114,6 @@ def main():
     # End of while
 #End of main
 #test
-	except KeyboardInterrupt:  
-		
-    # here you put any code you want to run before the program   
-    # exits when you press CTRL+C  
-        	print "Key hit"
   
     #except:  
     # this catches ALL other exceptions including errors.  
@@ -126,10 +121,10 @@ def main():
     # so only use it once your code is working  
      #   print "Other error or exception occurred!"  
   
-	finally: 
-	      GPIO.cleanup() # this ensures a clean exit  
-		   print "In Finally function" 
-	      push ("In Finally, not sure what happened")
+    finally: 
+        GPIO.cleanup() # this ensures a clean exit 
+	print "In Finally function" 
+	push ("In Finally, not sure what happened")
 
 
 if __name__ == '__main__':
