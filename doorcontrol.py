@@ -143,7 +143,7 @@ def openDoor():
 
 def main():
     GPIO.setmode(GPIO.BOARD)
-    openDoor()
+    closeDoor()
 
 if __name__ == '__main__':
    main()
