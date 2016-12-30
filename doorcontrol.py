@@ -141,14 +141,14 @@ def openDoor():
     motor(STOPMOTOR)
     return(status)
 
-def openDoorMEASURE():
+def closeDoorTest():
     status = WORKING
     finishtime = timer() + OPEN_TIME
     starttime = timer()
     print ("Start time")
     print starttime
 
-    motor(FORWARD) #start the motor closing
+    motor(REVERSE) #start the motor closing
 
     while status == WORKING:
         if getch() is not none
@@ -165,7 +165,7 @@ def openDoorMEASURE():
 def main():
     GPIO.setmode(GPIO.BOARD)
     char = getch()
-    closeDoorMEASURE()
+    closeDoorTest()
 
 if __name__ == '__main__':
    main()
