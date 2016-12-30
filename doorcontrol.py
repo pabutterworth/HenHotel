@@ -165,7 +165,8 @@ def main():
   
     finally:  
         GPIO.cleanup() # this ensures a clean exit  
-	print "In Finally function" +timer()
+	print "In Finally function" 
+	print timer()
 
 
 if __name__ == '__main__':
