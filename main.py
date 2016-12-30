@@ -115,6 +115,7 @@ def main():
 #End of main
 #test
 	except KeyboardInterrupt:  
+		
     # here you put any code you want to run before the program   
     # exits when you press CTRL+C  
         	print "Key hit"
