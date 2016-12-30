@@ -152,7 +152,7 @@ def main():
     starttime = time.time()
     try:
 	GPIO.setmode(GPIO.BOARD)
-  	closeDoor()
+  	openDoor()
   
     except KeyboardInterrupt:  
     # here you put any code you want to run before the program   
