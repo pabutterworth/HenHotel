@@ -135,13 +135,14 @@ def closeDoorTest():
     finishtime = timer() + OPEN_TIME
     starttime = timer()
     print ("Start time")
-    print starttime
+    ticks = time.time()
+    print ticks
 
     motor(REVERSE) #start the motor closing
 
 	
     while status == WORKING:
-	print ("")
+	fred=fred
 	#print timer()
         #status = SUCCESS         #All good
     motor(STOPMOTOR)
@@ -166,7 +167,9 @@ def main():
     finally:  
         GPIO.cleanup() # this ensures a clean exit  
 	print "In Finally function" 
-	print timer()
+	print ("End time")
+        ticks = time.time()
+        print ticks
 
 
 if __name__ == '__main__':
