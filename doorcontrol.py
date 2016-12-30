@@ -150,6 +150,7 @@ def closeDoorTest():
 
     motor(REVERSE) #start the motor closing
 
+	
     while status == WORKING:
         if getch() is not none
             print ("Finish Time")
