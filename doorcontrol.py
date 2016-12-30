@@ -155,7 +155,7 @@ def main():
     except KeyboardInterrupt:  
     # here you put any code you want to run before the program   
     # exits when you press CTRL+C  
-        print "\n", counter # print value of counter  
+        print "Key hit"
   
     #except:  
     # this catches ALL other exceptions including errors.  
@@ -165,7 +165,8 @@ def main():
   
     finally:  
         GPIO.cleanup() # this ensures a clean exit  
-	print timer()
+	print "In Finally function" +timer()
+
 
 if __name__ == '__main__':
    main()
