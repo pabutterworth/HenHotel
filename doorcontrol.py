@@ -141,9 +141,9 @@ def closeDoorTest():
 
 	
     while status == WORKING:
-	print ("Finish Time")
-	print timer()
-        status = SUCCESS         #All good
+	print (" ")
+	#print timer()
+        #status = SUCCESS         #All good
     motor(STOPMOTOR)
     return(status)
     
