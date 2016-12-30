@@ -141,11 +141,9 @@ def closeDoorTest():
 
 	
     while status == WORKING:
-	c = stdscr.getch()
-        if c != -1:
-            print ("Finish Time")
-	    print timer()
-            status = SUCCESS         #All good
+	print ("Finish Time")
+	print timer()
+        status = SUCCESS         #All good
     motor(STOPMOTOR)
     return(status)
     
@@ -167,6 +165,7 @@ def main():
   
     finally:  
         GPIO.cleanup() # this ensures a clean exit  
+	print timer()
 
 if __name__ == '__main__':
    main()
