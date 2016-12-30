@@ -1,5 +1,6 @@
 
 import RPi.GPIO as GPIO
+import curses
 import time
 from time import ctime
 from time import sleep
@@ -140,7 +141,8 @@ def closeDoorTest():
 
 	
     while status == WORKING:
-        if getch() is not none
+	c = stdscr.getch()
+        if c != -1:
             print ("Finish Time")
 	    print timer()
             status = SUCCESS         #All good
