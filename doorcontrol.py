@@ -159,11 +159,11 @@ def main():
     # exits when you press CTRL+C  
         print "\n", counter # print value of counter  
   
-    except:  
+    #except:  
     # this catches ALL other exceptions including errors.  
     # You won't get any error messages for debugging  
     # so only use it once your code is working  
-        print "Other error or exception occurred!"  
+     #   print "Other error or exception occurred!"  
   
     finally:  
         GPIO.cleanup() # this ensures a clean exit  
