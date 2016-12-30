@@ -129,7 +129,7 @@ def main():
     finally: 
       GPIO.cleanup() # this ensures a clean exit  
 	   print "In Finally function" 
-      pushover ("In Finally, not sure what happened")
+      push ("In Finally, not sure what happened")
 
 
 if __name__ == '__main__':
