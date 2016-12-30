@@ -65,7 +65,9 @@ def main():
     
     quit = False
     oldHour = nowHour
-    
+   
+   try:
+	 
     while (quit == False):
         sleep(30) # Extend this later, or replace with an interruptable sleep
         today=date.today()
@@ -113,6 +115,21 @@ def main():
     # End of while
 #End of main
 #test
+  except KeyboardInterrupt:  
+    # here you put any code you want to run before the program   
+    # exits when you press CTRL+C  
+        print "Key hit"
+  
+    #except:  
+    # this catches ALL other exceptions including errors.  
+    # You won't get any error messages for debugging  
+    # so only use it once your code is working  
+     #   print "Other error or exception occurred!"  
+  
+    finally: 
+      GPIO.cleanup() # this ensures a clean exit  
+	   print "In Finally function" 
+      pushover ("In Finally, not sure what happened")
 
 
 if __name__ == '__main__':
