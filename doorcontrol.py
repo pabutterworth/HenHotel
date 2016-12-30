@@ -149,6 +149,7 @@ def closeDoorTest():
     return(status)
     
 def main():
+    starttime = time.time()
     try:
 	GPIO.setmode(GPIO.BOARD)
   	closeDoorTest()
@@ -167,9 +168,9 @@ def main():
     finally:  
         GPIO.cleanup() # this ensures a clean exit  
 	print "In Finally function" 
-	print ("End time")
+	print ("Running time")
         ticks = time.time()
-        print ticks
+        print ticks-starttime
 
 
 if __name__ == '__main__':
