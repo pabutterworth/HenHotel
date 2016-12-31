@@ -102,7 +102,7 @@ def closeDoor():
     status = WORKING
     finishtime = timer() + CLOSE_TIME
     print finishtime
-
+    push("Starting Motor")
     motor(REVERSE) #start the motor closing
 
     while status == WORKING:
@@ -112,12 +112,14 @@ def closeDoor():
             push("Time Out - Check Ramp")
 
     motor(STOPMOTOR)
+    push("Stopping Motor")
     return(status)
 
 def openDoor():
     status = WORKING
     finishtime = timer() + OPEN_TIME
     print finishtime
+    push("Starting Open Door")
 
     motor(FORWARD) #start the motor closing
 
@@ -128,6 +130,7 @@ def openDoor():
             push("Time Out - Check Ramp")
 
     motor(STOPMOTOR)
+    push("Stopping Motor")
     return(status)
 
 def closeDoorTest():
