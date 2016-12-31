@@ -10,7 +10,7 @@ MAXTIME = 164
 CLOSED = 164 #this is the readingf or a closed ramp
 OPEN = 164
 
-DELAY = 20 # Delay sfter sunset to close door
+DELAY = 30 # Delay sfter sunset to close door
 
 longitude=0.2637 #East
 latitude=51.1324
@@ -108,6 +108,7 @@ def main():
 		    push("Opening Door")
 		    log.debug('Opening door')
 		    openDoor()
+		    push("Door should be open!")
 		    print "Its daytime at "
 		    print now
 		    itsdaytime = True
