@@ -156,15 +156,9 @@ def main():
 	GPIO.setmode(GPIO.BOARD)
    #start the motor closing
 
-    while status == WORKING:
-        if timer() >= finishtime: #timer expired
-            debugprint ("TIMER EXPIRED")
-            status = TIMEOUT
-            push("Time Out - Check Ramp")
-
-    motor(FORWARD)
-    sleep (5)
-    motor(STOPMOTOR)
+        motor(FORWARD)
+        sleep (5)
+        motor(STOPMOTOR)
   
     except KeyboardInterrupt:  
     # here you put any code you want to run before the program   
