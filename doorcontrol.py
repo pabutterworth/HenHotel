@@ -160,7 +160,7 @@ def main():
 
     try:
 	GPIO.setmode(GPIO.BOARD)
-	message = "distance = %d cm", howfar()
+	message = "distance = " +str(howfar()) +"cm"
         push(message)
     
   
