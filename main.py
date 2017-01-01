@@ -103,10 +103,8 @@ def main():
 		    closeDoor()
 		    message = "Door should be closed - distance = " +str(howfar()) +"cm"
                     push(message)
-
-		    print "Its nighttime at "
+                    print "Its nighttime at "
 	            print now 
-		    log.debug("Door should be closed")
 		    itsdaytime = False
 
 		if itsdaytime == False and daytime == True:
