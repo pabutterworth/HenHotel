@@ -157,13 +157,12 @@ def closeDoorTest():
 def main():
 	
     starttime = time.time()
+
     try:
+	GPIO.setmode(GPIO.BOARD)
 	message = "distance = " + howfar() + "cm"  
         push(message)
-    #
-    #try:
-	#GPIO.setmode(GPIO.BOARD)
-  	#closeDoor()
+    
   
     except KeyboardInterrupt:  
     # here you put any code you want to run before the program   
