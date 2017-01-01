@@ -101,7 +101,8 @@ def main():
 		    log.debug('Closing door')
 		    closeDoor()
 		    print "Its nighttime at "
-		    print now 
+	            print now 
+		    log.debug("Door should be closed")
 		    itsdaytime = False
 
 		if itsdaytime == False and daytime == True:
