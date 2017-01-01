@@ -112,8 +112,6 @@ def closeDoor():
 
     motor(STOPMOTOR)
     push("Stopping Motor")
-    message = "distance = " + howfar() + "cm"  
-    push(message)
     return(status)
 
 def openDoor():
@@ -132,8 +130,6 @@ def openDoor():
 
     motor(STOPMOTOR)
     push("Stopping Motor")
-    message = "distance = " + howfar() + "cm"  
-    push(message)
     return(status)
 
 def closeDoorTest():
@@ -160,8 +156,7 @@ def main():
 
     try:
 	GPIO.setmode(GPIO.BOARD)
-	message = "distance = " +str(howfar()) +"cm"
-        push(message)
+
     
   
     except KeyboardInterrupt:  
