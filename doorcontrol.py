@@ -158,12 +158,11 @@ def main():
 	
     message = "distance = " + howfar() + "cm"  
     push(message)
-	"""
-    starttime = time.time()
-    try:
-	GPIO.setmode(GPIO.BOARD)
-  	closeDoor()
-  """
+    #starttime = time.time()
+    #try:
+	#GPIO.setmode(GPIO.BOARD)
+  	#closeDoor()
+  
     except KeyboardInterrupt:  
     # here you put any code you want to run before the program   
     # exits when you press CTRL+C  
