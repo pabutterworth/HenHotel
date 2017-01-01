@@ -97,19 +97,25 @@ def main():
 		    oldHour = nowHour"""
 
 		if itsdaytime == True and daytime == False:
-		    push("Closing door")
-		    log.debug('Closing door')
+		    message = "Door Starting to close - distance = " +str(howfar()) +"cm"
+                    push(message)
+		    log.debug(message)
 		    closeDoor()
+		    message = "Door should be closed - distance = " +str(howfar()) +"cm"
+                    push(message)
+
 		    print "Its nighttime at "
 	            print now 
 		    log.debug("Door should be closed")
 		    itsdaytime = False
 
 		if itsdaytime == False and daytime == True:
-		    push("Opening Door")
-		    log.debug('Opening door')
+    		    message = "Door Starting to open - distance = " +str(howfar()) +"cm"
+                    push(message)
+		    log.debug(message)
 		    openDoor()
-		    push("Door should be open!")
+		    message = "Door should be open - distance = " +str(howfar()) +"cm"
+                    push(message)
 		    print "Its daytime at "
 		    print now
 		    itsdaytime = True
