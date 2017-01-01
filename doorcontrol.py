@@ -1,6 +1,5 @@
 
 import RPi.GPIO as GPIO
-import curses
 import time
 from time import ctime
 from time import sleep
@@ -113,6 +112,8 @@ def closeDoor():
 
     motor(STOPMOTOR)
     push("Stopping Motor")
+    message = "distance = " + howfar() + "cm"  
+    push(message)
     return(status)
 
 def openDoor():
@@ -131,6 +132,8 @@ def openDoor():
 
     motor(STOPMOTOR)
     push("Stopping Motor")
+    message = "distance = " + howfar() + "cm"  
+    push(message)
     return(status)
 
 def closeDoorTest():
