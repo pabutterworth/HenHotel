@@ -8,7 +8,7 @@ import math
 import datetime
 from pushover import push
 debugmode = True
-import sys
+import sys, getopt
 
 WORKING = 0
 SUCCESS = 1
@@ -151,14 +151,27 @@ def closeDoorTest():
     motor(STOPMOTOR)
     return(status)
     
-def main():
+def main(argv):
 
-     print 'Number of arguments:', len(sys.argv), 'arguments.'
-     print 'Argument List:', str(sys.argv)
-     
-     if len(sys.argv) = 0
-          print ("No arguments passes, needs up or down and an optional number of seconds
-     
+   inputfile = ''
+   outputfile = ''
+   try:
+      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+   except getopt.GetoptError:
+      print "No arguments passes, needs up or down and an optional number of seconds"
+      sys.exit(2)
+	
+   for opt, arg in opts:
+      if opt == '-h':
+         print 'test.py -i <inputfile> -o <outputfile>'
+         sys.exit()
+      elif opt in ("open", "down"):
+	  state = open
+          seconds = arg
+      elif opt in ("down", "close"):
+          state = close
+	  seconds = arg
+		  
     starttime = time.time()
     try:
 	GPIO.setmode(GPIO.BOARD)
@@ -192,6 +205,5 @@ def main():
 #    down - opens ramp
 #    up 5 - 5 seconds of down
 
-
-if __name__ == '__main__':
-   main()
+if __name__ == "__main__":
+   main(sys.argv[1:])
