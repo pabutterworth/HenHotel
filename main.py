@@ -42,7 +42,7 @@ def main():
     now = datetime.now()
     nowHour = now.hour
     nowMins = now.minute
-    push("HenHotel starting")
+    #push("HenHotel starting")
 
     GPIO.setmode(GPIO.BOARD)
         
