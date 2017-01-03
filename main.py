@@ -42,6 +42,7 @@ def main():
     now = datetime.now()
     nowHour = now.hour
     nowMins = now.minute
+    push("HenHotel starting")
 
     GPIO.setmode(GPIO.BOARD)
         
@@ -88,14 +89,6 @@ def main():
 		if nowHour == sunSetHour and nowMins < sunSetMins:
 		    daytime=True
 
-		#print("Time now is" + ctime())
-		"""#Just an hourly ping to see if the wifi stops working
-		if oldHour != nowHour:
-		    msg = "New Hour"
-		    push(msg)
-		    print msg
-		    oldHour = nowHour"""
-
 		if itsdaytime == True and daytime == False:
 		    message = "Door Starting to close - distance = " +str(howfar()) +"cm"
                     push(message)
@@ -130,7 +123,7 @@ def main():
     finally: 
         GPIO.cleanup() # this ensures a clean exit 
 	print "In Finally function" 
-	push ("In Finally, not sure what happened")
+	push ("In Finally, not sure what happened - system needs a reboot")
 
 
 if __name__ == '__main__':
