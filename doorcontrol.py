@@ -153,9 +153,11 @@ def closeDoorTest():
 def main():
 	
     starttime = time.time()
+    
 
     try:
 	GPIO.setmode(GPIO.BOARD)
+	openDoor()
 
     
   
