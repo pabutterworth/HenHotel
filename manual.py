@@ -8,7 +8,7 @@ import math
 import datetime
 from pushover import push
 debugmode = True
-import sys, getopt
+import sys
 
 WORKING = 0
 SUCCESS = 1
