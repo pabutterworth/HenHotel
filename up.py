@@ -15,13 +15,14 @@ TIMEOUT = 2
 SWITCHABORT = 3
 
 
+
 FORWARD = 1
 REVERSE = 2
 STOPMOTOR = 3
 
 MAX_TIME = 164
 CLOSE_TIME = 164 #time to take to close
-OPEN_TIME = 164 #time to open  
+OPEN_TIME = 164 #time to open
 
 OPEN_DISTANCE = 70
 CLOSED_DISTANCE = 24
@@ -72,7 +73,7 @@ def timer():
    return ticks
 
 def motor(direction):
-	
+
 	if direction == FORWARD:
 		GPIO.setup(GPIO_MOTOR_FORWARD, GPIO.OUT)
 		GPIO.setup(GPIO_MOTOR_REVERSE, GPIO.OUT)
@@ -91,7 +92,7 @@ def motor(direction):
 		debugprint("Motor: Stop")
 	else:
 		debugprint ("Invalid input to motor function")
-	
+
 	return #enf of function mortor
 
 def manualswitch():
@@ -142,14 +143,14 @@ def closeDoorTest():
 
     motor(REVERSE) #start the motor closing
 
-	
+
     while status == WORKING:
 	fred=1
 	#print timer()
         #status = SUCCESS         #All good
     motor(STOPMOTOR)
     return(status)
-    
+
 def main():
     starttime = time.time()
     try:
@@ -158,21 +159,21 @@ def main():
         motor(REVERSE)
         sleep (5)
         motor(STOPMOTOR)
-  
-    except KeyboardInterrupt:  
-    # here you put any code you want to run before the program   
-    # exits when you press CTRL+C  
+
+    except KeyboardInterrupt:
+    # here you put any code you want to run before the program
+    # exits when you press CTRL+C
         print "Key hit"
-  
-    #except:  
-    # this catches ALL other exceptions including errors.  
-    # You won't get any error messages for debugging  
-    # so only use it once your code is working  
-     #   print "Other error or exception occurred!"  
-  
-    finally:  
-        GPIO.cleanup() # this ensures a clean exit  
-	print "In Finally function" 
+
+    #except:
+    # this catches ALL other exceptions including errors.
+    # You won't get any error messages for debugging
+    # so only use it once your code is working
+     #   print "Other error or exception occurred!"
+
+    finally:
+        GPIO.cleanup() # this ensures a clean exit
+	print "In Finally function"
 	print ("Running time")
         ticks = time.time()
         print ticks-starttime
