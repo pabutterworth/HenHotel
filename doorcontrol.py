@@ -41,6 +41,8 @@ def debugprint(message):
 
 
 def howfar():
+  pulse_start =0
+  pulse_end = 0
   #GPIO.setmode(GPIO.BOARD)
   GPIO.setup(GPIO_TRIG,GPIO.OUT)
   GPIO.setup(GPIO_ECHO,GPIO.IN)
